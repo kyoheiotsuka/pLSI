@@ -6,7 +6,7 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 
 class pLSI:
-	# variational implementation of probablistic Latent Semantic Indexing
+	# implementation of probablistic Latent Semantic Indexing
 
 	def __init__(self):
 		# do nothing particularly
@@ -36,7 +36,7 @@ class pLSI:
 		self.qZ = np.random.rand(self.nDocuments,self.nVocabulary,self.nTopics)
 		self.qZ /= self.qZ.sum(axis=2).reshape((self.nDocuments,self.nVocabulary,1))
 		
-		# start solving using variational Bayes
+		# start solving using EM algorithm
 		nIteration = 0
 
 		while(1):
